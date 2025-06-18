@@ -1,5 +1,6 @@
+---
 fixtures:
   repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib"
-    systemd: "https://github.com/voxpupuli/puppet-systemd"
-    cron: "https://github.com/voxpupuli/puppet-cron"
+    cron: https://github.com/voxpupuli/puppet-cron
+    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib
+    systemd: https://github.com/voxpupuli/puppet-systemd
