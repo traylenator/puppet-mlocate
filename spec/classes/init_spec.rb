@@ -58,7 +58,7 @@ describe 'mlocate' do
         end
 
         case [facts[:os]['family'], facts[:os]['release']['major']]
-        when %w[RedHat 8], %w[RedHat 9], %w[RedHat 36], %w[RedHat 37], %w[RedHat 38]
+        when %w[RedHat 8], %w[RedHat 9], %w[RedHat 36], %w[RedHat 37], %w[RedHat 38], %w[RedHat 40], %w[RedHat 41], %w[RedHat 10]
           it { is_expected.to contain_file('/etc/updatedb.conf').with_content(%r{^PRUNENAMES\s=\s"\.arch-ids\s.*\s\{arch\}"$}) }
         when %w[Debian 11], %w[Debian 12]
           it { is_expected.to contain_file('/etc/updatedb.conf').without_content(%r{^PRUNENAMES.*$}) }
@@ -77,7 +77,7 @@ describe 'mlocate' do
         end
 
         case facts[:os]['release']['major']
-        when '7', '8', '9', '36'
+        when '7', '8', '9', '10', '36'
           it { is_expected.to contain_package('mlocate') }
           it { is_expected.not_to contain_service('plocate-updatedb.timer') }
         else
@@ -99,7 +99,7 @@ describe 'mlocate' do
           it { is_expected.to contain_file('/usr/local/bin/mlocate-wrapper').with_source('puppet:///modules/mlocate/mlocate-wrapper') }
           it { is_expected.not_to contain_systemd__dropin_file('period.conf') }
           it { is_expected.not_to contain_service('mlocate-updatedb.timer') }
-        when '8', '9', '36'
+        when '8', '9', '10', '36'
           it { is_expected.not_to contain_file('/usr/local/bin/mlocate-wrapper') }
           it { is_expected.not_to contain_file('/etc/cron.d/mlocate-puppet.cron') }
           it { is_expected.not_to contain_file('/etc/cron.daily/mlocate') }
