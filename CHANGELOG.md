@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.0](https://github.com/voxpupuli/puppet-mlocate/tree/v4.0.0) (2025-08-25)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mlocate/compare/v3.0.0...v4.0.0)
+
+**Breaking changes:**
+
+- Drop puppet, update openvox minimum version to 8.19 [\#69](https://github.com/voxpupuli/puppet-mlocate/pull/69) ([TheMeier](https://github.com/TheMeier))
+
+**Implemented enhancements:**
+
+- Added Ubuntu 22.04 and 24.04 as supported OS [\#74](https://github.com/voxpupuli/puppet-mlocate/pull/74) ([traylenator](https://github.com/traylenator))
+- Allow puppet-systemd v9 [\#73](https://github.com/voxpupuli/puppet-mlocate/pull/73) ([traylenator](https://github.com/traylenator))
+- Support Debian 13 \(trixie\) [\#71](https://github.com/voxpupuli/puppet-mlocate/pull/71) ([traylenator](https://github.com/traylenator))
+- puppet/cron: Allow 5.x [\#68](https://github.com/voxpupuli/puppet-mlocate/pull/68) ([TheMeier](https://github.com/TheMeier))
+- metadata.json: Add OpenVox [\#66](https://github.com/voxpupuli/puppet-mlocate/pull/66) ([jstraw](https://github.com/jstraw))
+- puppet systemd 9 [\#59](https://github.com/voxpupuli/puppet-mlocate/pull/59) ([jay7x](https://github.com/jay7x))
+
+**Merged pull requests:**
+
+- Remove redundant \(EL7\) cron cases [\#72](https://github.com/voxpupuli/puppet-mlocate/pull/72) ([traylenator](https://github.com/traylenator))
+
 ## [v3.0.0](https://github.com/voxpupuli/puppet-mlocate/tree/v3.0.0) (2025-01-21)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mlocate/compare/v2.1.0...v3.0.0)
