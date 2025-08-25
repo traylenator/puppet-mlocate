@@ -18,7 +18,7 @@
 
 * Install mlocate or plocate package
 * Configures `/etc/updatedb.conf`
-* Maintains a cron or timer to run mlocate or plocate.
+* Maintains the timer to run mlocate or plocate.
 
 <a id="setup"></a>
 ## Setup

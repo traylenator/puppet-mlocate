@@ -1,7 +1,5 @@
 ---
 
-mlocate::locate: plocate
-
 mlocate::prunefs:
   - 9p
   - afs
