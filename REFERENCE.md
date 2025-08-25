@@ -56,7 +56,6 @@ The following parameters are available in the `mlocate` class:
 * [`prunepaths`](#-mlocate--prunepaths)
 * [`prunenames`](#-mlocate--prunenames)
 * [`period`](#-mlocate--period)
-* [`package_cron`](#-mlocate--package_cron)
 * [`force_updatedb`](#-mlocate--force_updatedb)
 
 ##### <a name="-mlocate--package_names"></a>`package_names`
@@ -120,14 +119,6 @@ Data type: `Enum['infinite','daily','weekly','monthly']`
 Should the update interval be daily, weekly, monthly or infinite.
 
 Default value: `'daily'`
-
-##### <a name="-mlocate--package_cron"></a>`package_cron`
-
-Data type: `Optional[Stdlib::Unixpath]`
-
-Path to a cron file entry to be purged.
-
-Default value: `undef`
 
 ##### <a name="-mlocate--force_updatedb"></a>`force_updatedb`
 

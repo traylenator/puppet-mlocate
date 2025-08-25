@@ -24,7 +24,6 @@
 # @param prunepaths List of file systems paths not to search
 # @param prunenames List of directory or files names to match adn not include.
 # @param period Should the update interval be daily, weekly, monthly or infinite.
-# @param package_cron Path to a cron file entry to be purged.
 # @param force_updatedb Should puppet run updatedb if no database already exists.
 #
 class mlocate (
@@ -36,7 +35,6 @@ class mlocate (
   Array[Stdlib::Unixpath]                     $prunepaths = [],
   Array[String[1]]                            $prunenames = [],
   Enum['infinite','daily','weekly','monthly'] $period = 'daily',
-  Optional[Stdlib::Unixpath]                  $package_cron = undef,
   Boolean                                     $force_updatedb = false,
 
 ) {
@@ -45,18 +43,9 @@ class mlocate (
   }
 
   if ( ($facts['os']['name'] == 'Fedora' and  versioncmp($facts['os']['release']['major'],'37') >= 0 ) or
+    ($facts['os']['family'] == 'RedHat' and versioncmp($facts['os']['release']['major'],'10') >= 0) or
   ($facts['os']['family'] != 'RedHat' ) ) and $locate == 'mlocate' {
     fail('mlocate is obsoleted by plocate and \$locate cannot be set to \'mlocate\'')
-  }
-
-  if $facts['os']['release']['major'] == '7' and $locate == 'plocate' {
-    fail('plocate is not available on EL7')
-  }
-
-  # Is the package cron or timer based?
-  $periodic_method = ( $facts['os']['family'] == 'RedHat' and $facts['os']['release']['major'] == '7') ? {
-    true    => 'cron',
-    default => 'timer',
   }
 
   Class['mlocate::install'] -> Class['mlocate::config']

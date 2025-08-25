@@ -1,5 +1,7 @@
 ---
 
+mlocate::locate: mlocate
+
 mlocate::prunefs:
   - 9p
   - afs
